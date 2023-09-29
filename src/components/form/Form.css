@@ -1,0 +1,48 @@
+.btn {
+    margin: 1em;
+    border: 0;
+    border-radius: 10px;
+    padding: .5em 1em;
+    background-color: rgb(92, 175, 92);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.submit {
+    margin: 1em auto;
+}
+
+.response {
+    background-color: rgb(22, 21, 21);
+    color: rgb(243, 202, 126);
+    height: 500px;
+    resize: none;
+}
+
+.request {
+    background-color: rgb(22, 21, 21);
+    color: rgb(64, 167, 69);
+    resize: none;
+
+}
+
+.prop-title {
+    margin: 1em 0;
+}
+
+.nested-prop {
+    margin-left: 10%;
+}
+
+.input {
+    margin: 0;
+}
+
+.form-control {
+    margin: 1em 0;
+}
+
+textarea {
+    margin: 2em auto;
+}

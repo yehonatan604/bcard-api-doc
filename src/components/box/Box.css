@@ -1,0 +1,68 @@
+.box {
+    box-shadow: 3px 3px 20px black;
+    width: 50vw;
+    margin: 1em;
+}
+
+.box>h3 {
+    font-size: 30px;
+}
+
+.inner-box {
+    margin-left: 2em;
+}
+
+.inner-box>p {
+    margin: .3em 0;
+    font-size: 22px;
+}
+
+.box-instructions {
+    margin: 1em !important;
+    font-weight: 300;
+    font-size: larger;
+    width: 90%;
+}
+
+.instruction-request {
+    margin: 1em !important;
+    font-style: italic;
+    font-weight: 300;
+    font-size: larger;
+}
+
+.box-title {
+    width: 98%;
+    margin: auto;
+
+}
+
+.btn-category {
+    background-color: rgb(144, 159, 187);
+    font-size: xx-large;
+    width: 55%;
+}
+
+.btn-category:hover {
+    background-color: rgb(4, 187, 86);
+    transition: 1s;
+}
+
+.btn:hover {
+    transition: 1s;
+    opacity: .7;
+}
+
+hr {
+    height: 3px;
+    width: 45vw;
+    background-color: silver;
+    border: 0;
+    box-shadow: 1px 1px 3px black;
+    margin-top: 2em;
+}
+
+.p-title {
+    font-weight: bloder;
+    color: chocolate;
+}
