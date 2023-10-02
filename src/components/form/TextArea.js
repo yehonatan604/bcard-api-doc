@@ -2,7 +2,7 @@ import React from "react";
 import dtoManager from "../../helpers/dtoManager";
 
 const TextArea = ({ isRequest, data, endpoint }) => {
-    let textBox = isRequest ? (
+    const requestBox = (
         <div className="flex-center w-100">
             <h3 className="prop-title">Request Body:</h3>
             <textarea
@@ -19,7 +19,9 @@ const TextArea = ({ isRequest, data, endpoint }) => {
             >
             </textarea>
         </ div>
-    ) : (
+    );
+
+    const resoponseBox = (
         <div className="flex-center w-100">
             <h3>Response:</h3>
             <textarea
@@ -32,13 +34,11 @@ const TextArea = ({ isRequest, data, endpoint }) => {
             >
             </textarea>
         </div>
-    )
+    );
 
-    if (dtoManager(endpoint.name) === null) {
-        return <></>
-    }
+    return isRequest && dtoManager(endpoint.name) ?
+        requestBox : !isRequest ? resoponseBox : <></>;
 
-    return textBox;
 }
 
 export default TextArea;

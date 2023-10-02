@@ -53,13 +53,19 @@ const Form = ({ endpoint }) => {
                     </div>
                 )}
                 <Instructions endpoint={endpoint} />
-                <TextArea isRequest={true} endpoint={endpoint} />
+                <TextArea
+                    isRequest={true}
+                    endpoint={endpoint}
+                />
                 <input
                     type="submit"
                     className="btn submit"
                     value="Try it out"
                 />
-                <TextArea data={data} endpoint={endpoint} />
+                <TextArea
+                    data={data}
+                    isRequest={false}
+                    endpoint={endpoint} />
             </div>
         </form>
     );

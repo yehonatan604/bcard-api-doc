@@ -11,6 +11,28 @@
     width: 100%;
 }
 
+.bg-deepBlue {
+    background-color: rgb(65, 107, 145);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 2vw;
+}
+
+.footer>img {
+    width: 4em;
+}
+
+.footer>h4 {
+    margin-left: 2em;
+}
+
+.about>div {
+    width: 30vw;
+}
+
 body {
     height: 101vh;
 }

@@ -1,6 +1,6 @@
 const userLoginDto = () => {
     return {
-        email: "admin@gmail.com",
+        email: "business@gmail.com",
         password: "Aa1234!"
     }
 }
