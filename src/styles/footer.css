@@ -1,0 +1,14 @@
+.footer {
+    position: relative;
+    bottom: 0;
+    height: 2vw;
+    margin-top: 8em;
+}
+
+.footer>img {
+    width: 4em;
+}
+
+.footer>h4 {
+    margin-left: 2em;
+}

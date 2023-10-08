@@ -1,11 +1,13 @@
 import axiosManager from '../helpers/axiosManager';
 import BASE_URL from '../helpers/baseApiUrl';
 import decoder from '../helpers/decoder';
+import swal from '../helpers/swalManager'
 
 const useApi = (user, setUser) => {
     const logout = () => {
         user.isLoggedIn && localStorage.setItem('token', '');
     }
+
 
     const sendRequest = (e, endpoint, id, setData) => {
         e.preventDefault();
@@ -18,7 +20,10 @@ const useApi = (user, setUser) => {
                 } else {
                     setData(response);
                 }
-            }).catch(err => setData(err.message))
+            }).catch(err => {
+                setData(err.message)
+                swal('Request', 'Request Failed!', false);
+            })
     }
 
     const login = (setData) => {
@@ -38,7 +43,9 @@ const useApi = (user, setUser) => {
                                     'User'
                     }
                 });
+                swal('Log-In', 'Log-in was successfull', false);
             }).catch((err) => {
+                swal('Log-In', 'Log-in Failed!', false);
                 setData(err.message);
             })
         };

@@ -1,7 +1,8 @@
 .box {
-    box-shadow: 3px 3px 20px black;
+    box-shadow: 0px 3px 12px black;
     width: 50vw;
     margin: 1em;
+    border-radius: 10px;
 }
 
 .box>h3 {
@@ -37,20 +38,9 @@
 
 }
 
-.btn-category {
-    background-color: rgb(144, 159, 187);
-    font-size: xx-large;
-    width: 55%;
-}
-
-.btn-category:hover {
-    background-color: rgb(4, 187, 86);
-    transition: 1s;
-}
-
-.btn:hover {
-    transition: 1s;
-    opacity: .7;
+.p-title {
+    font-weight: bloder;
+    color: chocolate;
 }
 
 hr {
@@ -59,10 +49,5 @@ hr {
     background-color: silver;
     border: 0;
     box-shadow: 1px 1px 3px black;
-    margin-top: 2em;
-}
-
-.p-title {
-    font-weight: bloder;
-    color: chocolate;
+    margin: 2em auto;
 }

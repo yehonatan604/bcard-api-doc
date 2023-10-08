@@ -1,27 +1,21 @@
-import React from 'react';
-import UsersEnpointsList from './data/users-endpoints'
-import Category from './components/Category';
-import CardSEnpointsList from './data/cards-endpoints-list';
-import useStart from './hooks/useStart';
-import Footer from './components/Footer';
-import About from './components/About';
+import React, { useState, useContext } from 'react';
+import useApi from './hooks/useApi';
+import UserContext from './store/UserContext';
+import emptyUser from './data/types/emptyUser.type';
+import AppRouter from './helpers/AppRouter';
 
 const App = () => {
-  const header = useStart();
+
+  const [user, setUser] = useState({ ...emptyUser });
+  const { logout } = useApi(user, setUser);
+  let context = useContext(UserContext);
+
+  context.user = user;
+  context.setUser = setUser;
 
   return (
     <React.Fragment>
-      {header}
-      <Category
-        title={'Users'}
-        enpointsList={UsersEnpointsList}
-      />
-      <Category
-        title={'Cards'}
-        enpointsList={CardSEnpointsList}
-      />
-      <About />
-      <Footer />
+      <AppRouter setUser={setUser} logout={logout} />
     </React.Fragment>
   );
 }

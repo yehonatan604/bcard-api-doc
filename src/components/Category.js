@@ -1,27 +1,26 @@
-import React, { useState, useContext } from "react";
-import Box from './box/Box';
+import React, { useContext } from "react";
+import Box from './Box';
 import nextKey from "generate-my-key"
 import UserContext from "../store/UserContext";
 
 
 const Category = ({ title, enpointsList }) => {
-    const [isCategoryOpen, setIsCategoryOpen] = useState(false);
     const { setUser } = useContext(UserContext);
 
-    const toggleIsCategoryOpen = () => {
-        setIsCategoryOpen(!isCategoryOpen)
-    }
-
     return (
-        <div className='flex-center'>
-            <button
-                className="btn btn-category"
-                onClick={toggleIsCategoryOpen}
+        <div className='category flex-column-space'>
+            <div
+                className="div-category flex-center"
             >
                 {title}
-            </button>
+            </div>
+            <div className="api-text">
+                <p>
+                    Here you can find API addresses that the server will respond to as well as what should be sent to them in the body of the HTTP request and what permissions are required to receive a response from a specific API:
+                </p>
+            </div>
             {
-                isCategoryOpen && enpointsList.map((item) => {
+                enpointsList.map((item) => {
                     return (
                         <Box
                             key={nextKey()}

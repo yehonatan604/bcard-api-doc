@@ -1,27 +1,34 @@
 import React, { useContext } from "react";
 import UserContext from "../store/UserContext";
-import emptyUser from '../data/emptyUser'
+import { useNavigate } from "react-router-dom";
 
-const Header = ({ setUser, logout }) => {
+const Header = () => {
     let { user } = useContext(UserContext);
-    const goToHackerU = () => {
-        window.open('https://www.hackeru.co.il/', '_blank').focus();
+    const nav = useNavigate();
+
+    const navHome = () => {
+        nav('/');
     }
-    const onLogout = () => {
-        logout();
-        setUser({ ...emptyUser });
+    const navUsers = () => {
+        nav('/users');
     }
+    const navCards = () => {
+        nav('/cards');
+    }
+    const navInfo = () => {
+        nav('/info');
+    }
+
     return (
-        <div className='header bg-deepBlue flex-row-center w-100'>
-            <img onClick={goToHackerU} className='img' src={'https://www.hackeru.co.il/img/logo.svg'} alt={'profile'} />
+        <div className='header bg-deepBlue flex-space'>
             {user.isLoggedIn && <>
-                <h2 className='logoff' onClick={(e) => onLogout(e)}>
-                    {user.isLoggedIn ? 'Log-Off' : ''}
+                <h2 className='text-hover' onClick={navInfo}>
+                    {user.isLoggedIn ? user.email : ''}
                 </h2>
-                <h2>email: {user.email}</h2>
-                <h2>authLevel: {user.authLevel}</h2>
-                <h4 id="stamp">BCard API Documentation v1.0</h4>
             </>}
+            <h2 onClick={navHome} className='text-hover'>Home</h2>
+            <h2 onClick={navUsers} className='text-hover'>Users</h2>
+            <h2 onClick={navCards} className='text-hover'>Cards</h2>
         </div>
     );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import dtoManager from "../../helpers/dtoManager";
 
-const TextArea = ({ isRequest, data, endpoint }) => {
+const TextArea = ({ isRequest, data, endpoint, isToken }) => {
+    const dto = endpoint ? dtoManager(endpoint.name) : null;
     const requestBox = (
         <div className="flex-center w-100">
             <h3 className="prop-title">Request Body:</h3>
@@ -11,7 +12,7 @@ const TextArea = ({ isRequest, data, endpoint }) => {
                 cols={80}
                 defaultValue={
                     JSON.stringify(
-                        dtoManager(endpoint.name),
+                        dto,
                         null,
                         2
                     )
@@ -36,8 +37,26 @@ const TextArea = ({ isRequest, data, endpoint }) => {
         </div>
     );
 
-    return isRequest && dtoManager(endpoint.name) ?
-        requestBox : !isRequest ? resoponseBox : <></>;
+    const tokenBox = (
+        <div className="flex-center w-100">
+            <textarea
+                className="token"
+                rows={5}
+                cols={100}
+                defaultValue={
+                    JSON.stringify(data, null, 2)
+                }
+            >
+            </textarea>
+        </div>
+    );
+
+    return (
+        isToken ? tokenBox :
+            isRequest && dto ? requestBox :
+                !isRequest ? resoponseBox :
+                    <></>
+    );
 
 }
 

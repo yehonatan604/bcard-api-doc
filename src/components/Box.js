@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
-import Form from "../form/Form";
-import UserContext from "../../store/UserContext";
-import './Box.css'
+import Form from "./form/Form";
+import UserContext from "../store/UserContext";
 
 const Box = ({ currEndpoint }) => {
     const [isBoxOpen, setIsBoxOpen] = useState(false);
@@ -19,7 +18,7 @@ const Box = ({ currEndpoint }) => {
     if (isAdmin || user.authLevel === endpoint.authRequire || endpoint.authRequire === 'None') {
         lock = <p className="lock">&#128275;</p>;
     }
-    if (!user.isLoggedIn && endpoint.authRequire !== 'None') {
+    else {
         lock = <p className="lock">&#128274;</p>;
     }
 

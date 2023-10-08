@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import setEndPointProps from "../../helpers/set-endpoint-props";
+import setEndPointProps from "../../helpers/endpointManager";
 import Instructions from "./Instructions";
 import TextArea from "./TextArea";
 import { useContext } from "react";
 import UserContext from "../../store/UserContext";
 import useApi from "../../hooks/useApi";
-import './Form.css';
 
 const Form = ({ endpoint }) => {
     const [id, setId] = useState('');
@@ -39,7 +38,7 @@ const Form = ({ endpoint }) => {
                     {` ${endpoint.address + id}`}
                 </p>
                 {isPutOrPost &&
-                    <p className="instruction-request">In the request body you will need to provide an object with the following keys and values:</p>
+                    <p className="instruction-request">* In the request body you will need to provide an object with the following keys and values:</p>
                 }
                 {setEndPointProps(endpoint.object)}
                 {endpoint.needId && (
@@ -65,7 +64,8 @@ const Form = ({ endpoint }) => {
                 <TextArea
                     data={data}
                     isRequest={false}
-                    endpoint={endpoint} />
+                    endpoint={endpoint}
+                />
             </div>
         </form>
     );

@@ -1,5 +1,5 @@
-import setEndPointType from "../helpers/set-endpoint-type";
-import BASE_URL from "../helpers/baseApiUrl";
+import setEndPointType from "../types/endpoint.type";
+import BASE_URL from "../../helpers/baseApiUrl";
 
 const CardSEnpointsList = [
     // get all cards

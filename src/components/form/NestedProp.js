@@ -1,7 +1,6 @@
 import React from "react";
-import Table from "../table/Table";
+import PropsTable from "../tables/PropsTable";
 import nextKey from "generate-my-key"
-
 
 const NestedProp = ({ prop, title }) => {
     let nestedProps = [];
@@ -9,9 +8,9 @@ const NestedProp = ({ prop, title }) => {
     for (let element in prop) {
         nestedProps.push
             (
-                <div className="nested-prop" key={nextKey()}>
+                <div className="w-100 nested-prop" key={nextKey()}>
                     <h3 className="prop-title">{element}:</h3>
-                    <Table prop={prop[element]} />
+                    <PropsTable prop={prop[element]} />
                 </ div>
             );
     }

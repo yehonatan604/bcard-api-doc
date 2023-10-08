@@ -1,9 +1,8 @@
-import './Table.css';
 import React from "react";
 
-const Table = (props) => {
+const PropsTable = ({ prop }) => {
     return (
-        <table className="table">
+        <table className="props-table">
             <thead>
                 <tr>
                     <th>type</th>
@@ -15,16 +14,16 @@ const Table = (props) => {
             <tbody>
                 <tr>
                     <td>
-                        {props.prop.type}
+                        {prop.type}
                     </td>
                     <td>
-                        {props.prop.min}
+                        {prop.min}
                     </td>
                     <td>
-                        {props.prop.max}
+                        {prop.max}
                     </td>
                     <td>
-                        {props.prop.required}
+                        {prop.required}
                     </td>
                 </tr>
             </tbody>
@@ -32,4 +31,4 @@ const Table = (props) => {
     );
 }
 
-export default Table;
+export default PropsTable;

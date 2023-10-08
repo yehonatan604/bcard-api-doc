@@ -1,4 +1,4 @@
-import Table from "../components/table/Table";
+import PropsTable from "../components/tables/PropsTable";
 import NestedProp from "../components/form/NestedProp";
 import nextKey from "generate-my-key"
 
@@ -19,9 +19,9 @@ const setEndPointProps = (obj) => {
         }
         else {
             arr.push(
-                <div key={nextKey()}>
+                <div className="w-100" key={nextKey()}>
                     <h2 className="prop-title">{prop}:</h2>
-                    <Table
+                    <PropsTable
                         prop={currentProp}
                     />
                     <hr />
